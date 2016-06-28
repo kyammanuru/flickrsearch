@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WaitStaff Calculator</title>
+</head>
+<body>
+	<!-- Place the AngularJS script tag here -->
+	<!-- Place the app.js script tag here -->
+</body>
+</html><!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+   
+    <link rel="stylesheet" href="main.css" />
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.9/angular.js" data-semver="1.4.9"></script>
+	<script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.9/angular-message.js" data-semver="1.4.9"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-app="app" ng-controller="mycontroller as vm">
+    <form name="waitlistform" novalidate ng-submit="vm.submit()" ng-init="vm.tipTotal=0;vm.mealCount=0;">
+	<div>
+		<div id="divA" >
+			  <div>
+				<span>Flickr Search:</span><input style="text-align:right" name= "searchtext" type="text" ng-model="vm.searchtext" required>
+				
+			  
+			   <span ng-show="waitlistform.searchtext.$invalid"> The input field is required</span>  
+			   </div>
+			  <div>
+				<span></span><input type="submit" value="submit">
+			  </div>
+		</div>
+			
+		<div id="divA" >
+		      
+			   <div ng-if="vm.searching">
+					searching for query
+			   </div>
+			   <div ng-if="!vm.searching0">
+			     we found {{vm.data.length}} results for {{vm.searchtext}}
+			  </div>
+			  
+			  <div ng-repeat ="phot in vm.data">
+			    
+			    <span>Flickr Search image:</span>  <img ng-src="https://farm{{phot.farm}}.staticflickr.com/{{phot.server}}/{{phot.id}}_{{phot.secret}}.jpg" height="42" width="42"/>
+				
+				 
+			  </div>
+			  
+			 
+		</div>
+
+		
+		
+	</div>
+	
+	</form>
+  </body>
+
+</html>
